@@ -10,6 +10,7 @@
 [ X ]     Attach DB to UI
 [ X ]     Add Auth (Clerk)
 [  ]     Add Image Upload
+[  ]     Taint (server only) 
 [  ]     Error management (Sentry)
 [  ]     Routing / image page (parallel route)
 [  ]     Delete Button (w/ server actions)
