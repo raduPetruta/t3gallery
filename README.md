@@ -8,7 +8,7 @@
 [ X ]     Tidy up build process
 [ X ]     Set up DB (Vercel postgresql)
 [ X ]     Attach DB to UI
-[  ]     Add Auth (Clerk)
+[ X ]     Add Auth (Clerk)
 [  ]     Add Image Upload
 [  ]     Error management (Sentry)
 [  ]     Routing / image page (parallel route)
