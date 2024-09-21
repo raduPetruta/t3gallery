@@ -1,5 +1,9 @@
+import { headers } from "next/headers";
 import Link from "next/link";
 import { db } from "~/server/db";
+
+//used in order to not cache the page on the prod // dynamic page
+export const dynamic = "force-dynamic";
 
 const mockUrls = [
   "https://utfs.io/f/6T0oJ7aVQOaBgYHNkQLJmDuGHUkbt4NPTcfFjdy7We0l5SIA",
@@ -11,7 +15,6 @@ const mockUrls = [
 const mockImages = mockUrls.map((url, index) => ({id: index + 1, url}))
 
 export default async function HomePage() {
-
   const posts = await db.query.posts.findMany();
   console.log(posts);
 
