@@ -7,10 +7,8 @@ import { UploadThingError } from 'uploadthing/server';
 export async function getImagesByLoggedInUser() {
 
     const user = auth();
-    
     if (!user.userId) 
         throw new UploadThingError("Unauthorized");
-    
 
     const images = await db.query.images.findMany({
         where: (model, {eq}) => eq(model.userId, user.userId),
