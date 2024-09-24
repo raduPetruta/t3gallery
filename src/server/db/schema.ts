@@ -9,6 +9,7 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
+import { use } from "react";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -24,9 +25,9 @@ export const images = createTable(
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 256 }).notNull(),
     url: varchar("url", { length: 1024 }).notNull(),
+    userId: varchar("user_id", { length: 256 }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
+      .default(sql`CURRENT_TIMESTAMP`),
     updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
       () => new Date()
     ),

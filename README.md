@@ -11,6 +11,7 @@
 [ X ]     Add Auth (Clerk)
 [  ]     Add Image Upload
 [  ]     Taint (server only) 
+[  ]     Use Next/Image component
 [  ]     Error management (Sentry)
 [  ]     Routing / image page (parallel route)
 [  ]     Delete Button (w/ server actions)
