@@ -1,16 +1,17 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { get } from "http";
 import { headers } from "next/headers";
 import Link from "next/link";
 import { db } from "~/server/db";
+import { getImagesByLoggedInUser } from "~/server/db/queries";
 
 //used in order to not cache the page on the prod // dynamic page
 export const dynamic = "force-dynamic";
  
 async function Images() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, {desc}) =>  desc(model.id)
-  })
-
+ 
+  const images = await getImagesByLoggedInUser();
+   
   return (
     <div className="flex flex-wrap gap-4">
       {images.map((image, index) => (

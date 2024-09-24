@@ -9,7 +9,7 @@
 [ X ]     Set up DB (Vercel postgresql)
 [ X ]     Attach DB to UI
 [ X ]     Add Auth (Clerk)
-[  ]     Add Image Upload
+[ X ]     Add Image Upload
 [  ]     Taint (server only) 
 [  ]     Use Next/Image component
 [  ]     Error management (Sentry)
