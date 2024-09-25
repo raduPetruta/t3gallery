@@ -28,17 +28,27 @@ export default function RootLayout({
     modal: React.ReactNode,
   }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} flex flex-col gap-6`}>
+    <html lang="en" className={`${GeistSans.variable}`}>
       <ClerkProvider>
+        
         <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
         ></NextSSRPlugin>
+        
         <body>
-          <TopNav />
-          {children}
+          
+          <div className="h-screen grid grid-rows-[auto,1fr]">
+            <TopNav />
+            <main className="overflow-y-scroll">
+              {children}
+            </main>
+          </div>
+
           {modal}
+
           <div id="modal-root"></div>
         </body>
+      
       </ClerkProvider>
     </html>
   );
