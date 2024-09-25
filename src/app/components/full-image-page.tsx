@@ -7,8 +7,13 @@ export default async function FullPageImageView(props: { photoId: number }) {
 
   console.log(image);
   return (
-    <div>
-        <img src={image.url} alt={image.name} width={450} height={450} />
+    <div className="flex w-full h-full min-w-0">
+        <div className="flex-shrink flex justify-center items-center">
+            <img className="object-contain flex-shrink-0" src={image.url} alt={image.name}/>
+        </div>
+        <div className="w-48 flex flex-col flex-shrink-0">
+            <div className="text-xl font-bold">{image.name}</div>
+        </div>
     </div> 
   );
 }
