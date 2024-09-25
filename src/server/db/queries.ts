@@ -13,3 +13,22 @@ export async function getImagesByLoggedInUser() {
   });
   return images;
 }
+
+
+export async function getImageById(id: number) {
+
+  const user = auth();
+  if (!user.userId) 
+    throw new UploadThingError("Unauthorized");
+
+  const image = await db.query.images.findFirst({
+    where: (model, { eq }) => eq(model.id, id)
+  });
+
+  if(image?.userId !== user.userId) 
+    throw new UploadThingError("Unauthorized");
+  if(!image)  
+    throw new UploadThingError("Not found");
+
+  return image;
+}
