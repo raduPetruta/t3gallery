@@ -28,7 +28,7 @@ export default function RootLayout({
     modal: React.ReactNode,
   }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} dark`}>
       <ClerkProvider>
         
         <NextSSRPlugin
